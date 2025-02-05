@@ -74,17 +74,25 @@ view: users {
     type: count
     drill_fields: [detail*]
   }
+  dimension: segment_email {
+    sql: ${TABLE}.email ;;
+    tags: ["email"]
+  }
 
+  dimension: segment_user_id {
+    sql: ${TABLE}.id ;;
+    tags: ["user_id"]
+  }
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	last_name,
-	first_name,
-	events.count,
-	orders.count,
-	user_data.count
-	]
+  id,
+  last_name,
+  first_name,
+  events.count,
+  orders.count,
+  user_data.count
+  ]
   }
 
 }

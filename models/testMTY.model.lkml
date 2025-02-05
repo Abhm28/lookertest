@@ -37,7 +37,7 @@ explore: employees {}
 
 explore: events {
   join: users {
-    type: left_outer 
+    type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
@@ -51,7 +51,7 @@ explore: human {}
 
 explore: inventory_items {
   join: products {
-    type: left_outer 
+    type: left_outer
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
     relationship: many_to_one
   }
@@ -59,33 +59,37 @@ explore: inventory_items {
 
 explore: orders {
   join: users {
-    type: left_outer 
+    type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
+    relationship: many_to_one
+  }
+  join: contorderperuser {
+    sql_on: ${orders.user_id} = ${contorderperuser.id} ;;
     relationship: many_to_one
   }
 }
 
 explore: order_items {
   join: inventory_items {
-    type: left_outer 
+    type: left_outer
     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
     relationship: many_to_one
   }
 
   join: orders {
-    type: left_outer 
+    type: left_outer
     sql_on: ${order_items.order_id} = ${orders.id} ;;
     relationship: many_to_one
   }
 
   join: products {
-    type: left_outer 
+    type: left_outer
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
     relationship: many_to_one
   }
 
   join: users {
-    type: left_outer 
+    type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
@@ -93,25 +97,25 @@ explore: order_items {
 
 explore: order_items_vijaya {
   join: orders {
-    type: left_outer 
+    type: left_outer
     sql_on: ${order_items_vijaya.order_id} = ${orders.id} ;;
     relationship: many_to_one
   }
 
   join: inventory_items {
-    type: left_outer 
+    type: left_outer
     sql_on: ${order_items_vijaya.inventory_item_id} = ${inventory_items.id} ;;
     relationship: many_to_one
   }
 
   join: users {
-    type: left_outer 
+    type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
 
   join: products {
-    type: left_outer 
+    type: left_outer
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
     relationship: many_to_one
   }
@@ -131,13 +135,14 @@ explore: salary {}
 
 explore: test {}
 
-explore: users {}
+explore: users {
+
+}
 
 explore: user_data {
   join: users {
-    type: left_outer 
+    type: left_outer
     sql_on: ${user_data.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
 }
-
