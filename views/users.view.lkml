@@ -80,7 +80,7 @@ view: users {
   }
 
   dimension: segment_user_id {
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.segment_user_id ;;
     tags: ["user_id"]
   }
   # ----- Sets of fields for drilling ------
