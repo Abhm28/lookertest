@@ -40,7 +40,7 @@ view: orders {
     html: <div style="text-align: left; display: block; font-size: 14px; width: 100vw; padding-left: 30px; line-height: 22px">
      <a href="https://moma.corp.google.com/search?q=in%3Alooker-support&hq=" target="_blank" rel="noreferrer">Security Risk Analysis</a> <br>
      <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">success metrics</a> <br>
-</div>; ;;
+</div> ;;
   }
   measure: count {
     type: count
