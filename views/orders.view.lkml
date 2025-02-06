@@ -35,6 +35,10 @@ view: orders {
     # hidden: yes
     sql: ${TABLE}.user_id ;;
   }
+  dimension: link{
+    sql: "text" ;;
+    html: <a href="https://moma.corp.google.com/search?q=in%3Alooker-support&hq=" target="_blank" rel="noreferrer">Security Risk Analysis</a> <br> ;;
+  }
   measure: count {
     type: count
     drill_fields: [detail*]
@@ -43,13 +47,13 @@ view: orders {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	users.last_name,
-	users.first_name,
-	users.id,
-	order_items.count,
-	order_items_vijaya.count
-	]
+  id,
+  users.last_name,
+  users.first_name,
+  users.id,
+  order_items.count,
+  order_items_vijaya.count
+  ]
   }
 
 }
