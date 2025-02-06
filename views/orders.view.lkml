@@ -37,7 +37,7 @@ view: orders {
   }
   dimension: link{
     sql: "text" ;;
-    html: <a href="https://moma.corp.google.com/search?q=in%3Alooker-support&hq=" target="_blank" rel="noreferrer">Security Risk Analysis</a> <br> ;;
+    html: <a href="https://gcpl250.cloud.looker.com/embed/dashboards/16?Is+Disabled+%28Yes+%2F+No%29=No" target="_blank" rel="noreferrer">Security Risk Analysis</a> <br> ;;
   }
   measure: count {
     type: count
