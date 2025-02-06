@@ -37,7 +37,10 @@ view: orders {
   }
   dimension: link{
     sql: "text" ;;
-    html: <a href="https://gcpl250.cloud.looker.com/embed/dashboards/16?Is+Disabled+%28Yes+%2F+No%29=No" target="_blank" rel="noreferrer">Security Risk Analysis</a> <br> ;;
+    html: <div style="text-align: left; display: block; font-size: 14px; width: 100vw; padding-left: 30px; line-height: 22px">
+     <a href="https://moma.corp.google.com/search?q=in%3Alooker-support&hq=" target="_blank" rel="noreferrer">Security Risk Analysis</a> <br>
+     <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">success metrics</a> <br>
+</div>; ;;
   }
   measure: count {
     type: count
