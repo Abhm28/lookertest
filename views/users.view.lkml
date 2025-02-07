@@ -44,6 +44,7 @@ view: users {
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
+    tags: ["email"]
   }
 
   dimension: first_name {
@@ -74,12 +75,8 @@ view: users {
     type: count
     drill_fields: [detail*]
   }
-  dimension: segment_email {
-    sql: ${TABLE}.email ;;
-    tags: ["email"]
-  }
 
-  dimension: segment_user_id {
+  dimension: user_id {
     sql: ${TABLE}.id ;;
     tags: ["user_id"]
   }
