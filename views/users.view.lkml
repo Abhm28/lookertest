@@ -48,7 +48,6 @@ view: users {
   }
   dimension: segmentUserId {
     type: string
-    hidden: yes
     sql: concat(${TABLE}.email,${TABLE}.id) ;;
     tags: ["user_id"]
   }
