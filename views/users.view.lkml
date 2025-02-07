@@ -12,8 +12,6 @@ view: users {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
-    hidden: yes
-    tags: ["user_id"]
   }
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
@@ -47,6 +45,12 @@ view: users {
     type: string
     sql: ${TABLE}.email ;;
     tags: ["email"]
+  }
+  dimension: segmentUserId {
+    type: string
+    hidden: yes
+    sql: concat(${TABLE}.email,${TABLE}.id) ;;
+    tags: ["user_id"]
   }
 
   dimension: first_name {
