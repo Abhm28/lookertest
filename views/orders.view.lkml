@@ -32,7 +32,7 @@ view: orders {
 
   dimension: user_id {
     type: number
-    # hidden: yes
+    hidden: yes
     sql: ${TABLE}.user_id ;;
   }
   dimension: link{
@@ -41,6 +41,10 @@ view: orders {
      <a href="https://moma.corp.google.com/search?q=in%3Alooker-support&hq=" target="_blank" rel="noreferrer">Security Risk Analysis</a> <br>
      <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">success metrics</a> <br>
 </div> ;;
+  }
+  dimension: concat {
+    type: string
+    sql: CONCAT(${status}," - ",${user_id} ) ;;
   }
   measure: count {
     type: count
