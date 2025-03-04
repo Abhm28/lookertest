@@ -48,8 +48,8 @@ view: orders {
   }
 
   dimension: drill {
-    sql: ${TABLE}.user_id ;;
-    drill_fields: [status, link,user_id]
+    sql: ${TABLE}.status ;;
+    drill_fields: [user_id, link,count,]
   }
 
   measure: count {
