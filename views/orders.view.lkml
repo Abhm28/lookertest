@@ -49,7 +49,7 @@ view: orders {
 
   measure: count {
     type: count
-    drill_fields: [detail*]
+    drill_fields: [detail*,status,user_id, link,count,count]
   }
 
   dimension: drill {
