@@ -46,10 +46,17 @@ view: orders {
     type: string
     sql: CONCAT(${status}," - ",${user_id} ) ;;
   }
+
+  dimension: drill {
+    sql: ${TABLE}.user_id ;;
+    drill_fields: [status, link,user_id]
+  }
+
   measure: count {
     type: count
     drill_fields: [detail*]
   }
+
 
   # ----- Sets of fields for drilling ------
   set: detail {
