@@ -1,4 +1,3 @@
----
 - dashboard: test
   title: Schedule
   layout: newspaper
