@@ -79,10 +79,10 @@ view: users {
   dimension: gen {
     type: string
     sql: CASE
-      WHEN ${TABLE}.gender="f" then "1"
-      when ${TABLE}.gender="m" then "2"
-      else  "null"
-    ;;
+      WHEN ${TABLE}.gender='f' then '1'
+      WHEN ${TABLE}.gender='m' then '2'
+      else  'null'
+      END ;;
   }
   measure: count {
     type: count
