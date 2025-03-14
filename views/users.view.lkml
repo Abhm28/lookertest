@@ -76,6 +76,14 @@ view: users {
     type: zipcode
     sql: ${TABLE}.zip ;;
   }
+  dimension: gen {
+    type: string
+    sql: CASE
+      WHEN ${TABLE}.gender="f" then "1"
+      when ${TABLE}.gender="m" then "2"
+      else  "null"
+    ;;
+  }
   measure: count {
     type: count
     drill_fields: [detail*]
