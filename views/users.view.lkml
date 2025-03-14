@@ -79,8 +79,8 @@ view: users {
   dimension: gen {
     type: string
     sql: CASE
-      WHEN ${TABLE}.gender='f' then '1'
-      WHEN ${TABLE}.gender='m' then '2'
+      WHEN ${TABLE}.gender='hembra' then '1'
+      WHEN ${TABLE}.gender='macho' then '2'
       else  'null'
       END ;;
   }
