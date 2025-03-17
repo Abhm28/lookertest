@@ -19,7 +19,7 @@ view: orders {
   dimension_group: created {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
-    sql: CONVERT_TZ(${TABLE}.created_at,'UTC','Mexico/General') ;;
+    sql: CONVERT_TZ(${TABLE}.created_at,'UTC',"{{_user_attributes['timezone']}}") ;;
     convert_tz: no
   }
     # Here's what a typical dimension looks like in LookML.
