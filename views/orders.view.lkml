@@ -20,7 +20,7 @@ view: orders {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: CONVERT_TZ(${TABLE}.created_at,'UTC','Mexico/General') ;;
-    convert_tz: yes
+    convert_tz: no
   }
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
