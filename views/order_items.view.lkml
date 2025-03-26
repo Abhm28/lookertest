@@ -38,6 +38,35 @@ view: order_items {
     type: string
     sql: ${TABLE}.phones ;;
   }
+
+  dimension: send_feedback {
+
+    html:
+
+    <a href="https://www.google.com">
+
+      <img src='https://avatars.githubusercontent.com/u/59080?v=4' width='30' height='30' />
+
+      </a> ;;
+
+      sql:  ${TABLE}.order_id ;;
+
+    }
+
+    dimension: send_feedback2 {
+
+      html:
+
+          <a href="mailto:someone@example.com" target="_blank">
+
+            <img src='https://avatars.githubusercontent.com/u/59080?v=4' width='30' height='30' />
+
+            </a> ;;
+
+        sql: ${TABLE}.order_id ;;
+
+      }
+
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
