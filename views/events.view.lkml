@@ -1,9 +1,6 @@
 # The name of this view in Looker is "Events"
 view: events {
-  access_grant: can_view_dev {
-    user_attribute: id
-    allowed_values: [51]
-  }
+
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
   sql_table_name: demo_db.events ;;

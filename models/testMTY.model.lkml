@@ -13,7 +13,10 @@ datagroup: testMTY_default_datagroup {
 }
 
 persist_with: testMTY_default_datagroup
-
+access_grant: can_view_dev {
+  user_attribute: id
+  allowed_values: ["51"]
+}
 # Explores allow you to join together different views (database tables) based on the
 # relationships between fields. By joining a view into an Explore, you make those
 # fields available to users for data analysis.
