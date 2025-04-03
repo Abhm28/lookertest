@@ -40,7 +40,10 @@ view: users {
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
   }
-
+  dimension: create_at {
+    sql: ${TABLE}.created_at ;;
+    type: date
+  }
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
@@ -83,6 +86,19 @@ view: users {
       WHEN ${TABLE}.gender='macho' then '2'
       else  'null'
       END ;;
+  }
+  dimension: latitude {
+    type: number
+    sql: (floor(rand()*50)+1)  ;;
+  }
+  dimension: longitude {
+    type: number
+    sql: ${TABLE}.age * -1.123412341  ;;
+  }
+  dimension: testLocation {
+    type: location
+    sql_latitude: ${latitude}  ;;
+    sql_longitude: ${longitude}  ;;
   }
   measure: count {
     type: count
