@@ -105,6 +105,7 @@ view: users {
   }
   dimension: condicion1 {
     type: string
+    hidden: yes
     sql: case when
       (state IN ("Wyoming","Wisconsin","Utah", "Texas") AND
               gender = "f") or (state IN ("Wyoming","Wisconsin","Utah", "Texas") AND
