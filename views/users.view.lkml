@@ -66,7 +66,6 @@ view: users {
     type: string
     sql: ${TABLE}.last_name ;;
   }
-
   dimension: state {
     type: string
     sql: ${TABLE}.state ;;
@@ -79,13 +78,24 @@ view: users {
   dimension: gen {
     type: string
     sql: CASE
-      WHEN ${TABLE}.gender='hembra' then '1'
-      WHEN ${TABLE}.gender='macho' then '2'
+      WHEN ${TABLE}.gender='f' then '1'
+      WHEN ${TABLE}.gender='m' then '2'
       else  'null'
       END ;;
   }
+
+  dimension: condicion1 {
+    type: string
+    sql: case when
+      (state IN ("Wyoming","Wisconsin","Utah", "Texas") AND
+              gender = "f") or (state IN ("Wyoming","Wisconsin","Utah", "Texas") AND
+              age > 50) then "Yes"
+    else "No" end;;
+  }
+
   measure: count {
     type: count
+    filters: [condicion1: "yes"]
     drill_fields: [detail*]
   }
 

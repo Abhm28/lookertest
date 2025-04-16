@@ -39,9 +39,15 @@ explore: dummy {}
 explore: employees {}
 
 explore: events {
+  from: events
   join: users {
     type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
+    relationship: many_to_one
+  }
+  join:orders {
+    type: left_outer
+    sql_on: ${events.user_id} = ${orders.user_id} ;;
     relationship: many_to_one
   }
 }
@@ -148,4 +154,21 @@ explore: user_data {
     sql_on: ${user_data.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+}
+explore: eventsTest {
+  from: events
+  join: users {
+    type: left_outer
+    sql_on: ${eventsTest.user_id} = ${users.id} ;;
+    relationship: many_to_one
+  }
+  join:orders {
+    type: left_outer
+    sql_on: ${eventsTest.user_id} = ${orders.user_id} ;;
+    relationship: many_to_one
+  }
+}
+explore: test_orders {
+  from: orders
+  extends: [eventsTest]
 }

@@ -22,11 +22,25 @@ view: orders {
 
   dimension_group: created {
     type: time
-    timeframes: [raw, time, date, week, month, quarter, year]
-    sql: CONVERT_TZ(${TABLE}.created_at,'UTC',"{{_user_attributes['timezone']}}") ;;
+    timeframes: [raw, time, date, week, month, quarter, year, minute,hour]
+    sql: ${TABLE}.created_at ;;
     convert_tz: no
   }
-    # Here's what a typical dimension looks like in LookML.
+  dimension: minutes {
+    type: number
+    sql: 12*10 ;;
+  }
+  dimension_group: addtime {
+    type: time
+    timeframes: [raw, time, date, week, month, quarter, year, minute,hour,time_of_day]
+    sql: DATE_ADD(${created_time}, INTERVAL ${minutes} MINUTE) ;;
+  }
+  dimension: hourexact {
+    type: string
+    sql: concat(${addtime_hour},:,${addtime_minute}) ;;
+  }
+
+  # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
     # This dimension will be called "Status" in Explore.
 
@@ -54,12 +68,19 @@ view: orders {
 
   measure: count {
     type: count
+    #filters: [users.state : "Wyoming,Wisconsin,Utah, Texas", users.gender: "f", users.age: ">18"]
+    #filters: [status_filter: "yes"]
+  }
+
+  measure: counttest {
+    type: count_distinct
+    sql: CASE WHEN (${users.state} in ("Wyoming","Wisconsin","  Utah", "Texas"))  THEN ${id}
+    END;;
     drill_fields: [detail*]
   }
 
   dimension: drill {
     sql: ${TABLE}.status ;;
-    drill_fields: [status,user_id, link,count,count]
   }
 
   # ----- Sets of fields for drilling ------
@@ -73,5 +94,4 @@ view: orders {
   order_items_vijaya.count
   ]
   }
-
 }
