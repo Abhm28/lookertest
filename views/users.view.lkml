@@ -103,6 +103,27 @@ view: users {
     type: count
     drill_fields: [detail*]
   }
+  dimension: condicion1 {
+    type: string
+    sql: case when
+      (state IN ("Wyoming","Wisconsin","Utah", "Texas") AND
+              gender = "f") or (state IN ("Wyoming","Wisconsin","Utah", "Texas") AND
+              age > 50) then "Yes"
+    else "No" end;;
+  }
+  measure: counttest {
+    type: count_distinct
+    sql: ${id} ;;
+    filters: [condicion1: "yes"]
+    drill_fields: [detail*]
+  }
+  measure: countbad {
+    type: count_distinct
+    sql: case when
+    (state IN ("Wyoming","Wisconsin","Utah", "Texas") AND
+    gender = "f") or (state IN ("Wyoming","Wisconsin","Utah", "Texas") AND
+    age > 50) then ${id} end;;
+  }
 
   # ----- Sets of fields for drilling ------
   set: detail {
