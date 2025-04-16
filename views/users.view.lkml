@@ -40,7 +40,10 @@ view: users {
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
   }
-
+  dimension: create_at {
+    sql: ${TABLE}.created_at ;;
+    type: date
+  }
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
@@ -83,6 +86,7 @@ view: users {
       else  'null'
       END ;;
   }
+<<<<<<< HEAD
 
   dimension: condicion1 {
     type: string
@@ -93,6 +97,21 @@ view: users {
     else "No" end;;
   }
 
+=======
+  dimension: latitude {
+    type: number
+    sql: (floor(rand()*50)+1)  ;;
+  }
+  dimension: longitude {
+    type: number
+    sql: ${TABLE}.age * -1.123412341  ;;
+  }
+  dimension: testLocation {
+    type: location
+    sql_latitude: ${latitude}  ;;
+    sql_longitude: ${longitude}  ;;
+  }
+>>>>>>> branch 'master' of git@github.com:Abhm28/lookertest.git
   measure: count {
     type: count
     filters: [condicion1: "yes"]

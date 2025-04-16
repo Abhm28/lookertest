@@ -78,6 +78,11 @@ view: orders {
     END;;
     drill_fields: [detail*]
   }
+  measure: summillon {
+    type: number
+    sql: ${count}*1000000.12132324545 ;;
+    value_format: "0.000,,\" M\""
+  }
 
   dimension: drill {
     sql: ${TABLE}.status ;;
