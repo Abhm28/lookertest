@@ -86,18 +86,6 @@ view: users {
       else  'null'
       END ;;
   }
-<<<<<<< HEAD
-
-  dimension: condicion1 {
-    type: string
-    sql: case when
-      (state IN ("Wyoming","Wisconsin","Utah", "Texas") AND
-              gender = "f") or (state IN ("Wyoming","Wisconsin","Utah", "Texas") AND
-              age > 50) then "Yes"
-    else "No" end;;
-  }
-
-=======
   dimension: latitude {
     type: number
     sql: (floor(rand()*50)+1)  ;;
@@ -111,10 +99,8 @@ view: users {
     sql_latitude: ${latitude}  ;;
     sql_longitude: ${longitude}  ;;
   }
->>>>>>> branch 'master' of git@github.com:Abhm28/lookertest.git
   measure: count {
     type: count
-    filters: [condicion1: "yes"]
     drill_fields: [detail*]
   }
 
