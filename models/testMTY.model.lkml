@@ -8,8 +8,10 @@ include: "/Dashboards/*.dashboard.lookml"
 # use the Quick Help panel on the right to see documentation.
 
 datagroup: testMTY_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  #sql_trigger: SELECT MAX(id) FROM etl_log;;
+  max_cache_age: "5 minutes"
+  interval_trigger: "5 minutes"
+  description: "Trigger every 5 minutes to persist data for 5 minutes at a time"
 }
 
 persist_with: testMTY_default_datagroup
@@ -154,21 +156,4 @@ explore: user_data {
     sql_on: ${user_data.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
-}
-explore: eventsTest {
-  from: events
-  join: users {
-    type: left_outer
-    sql_on: ${eventsTest.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-  join:orders {
-    type: left_outer
-    sql_on: ${eventsTest.user_id} = ${orders.user_id} ;;
-    relationship: many_to_one
-  }
-}
-explore: test_orders {
-  from: orders
-  extends: [eventsTest]
 }
