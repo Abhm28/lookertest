@@ -4,7 +4,17 @@ view: orders {
   # to be used for all fields in this view.
   sql_table_name: demo_db.orders ;;
   drill_fields: [id]
-
+  parameter: parameter {
+    type: unquoted
+    allowed_value: {
+      label: "Total Sale Price"
+      value: "sale_price"
+    }
+    allowed_value: {
+      label: "Total Cost"
+      value: "cost"
+    }
+  }
   # This primary key is the unique key for this table in the underlying database.
   # You need to define a primary key in a view in order to join to other views.
 
@@ -86,6 +96,30 @@ view: orders {
     sql: CASE WHEN (${users.state} in ("Wyoming","Wisconsin","  Utah", "Texas"))  THEN ${id}
     END;;
     drill_fields: [detail*]
+  }
+
+  measure: money {
+    type: number
+    label:"{% if parameter._parameter_value == 'sale_price' %} Sale Price
+    {% elsif  parameter._parameter_valu == 'cost' %} Cost
+    {% endif %}"
+    value_format: "[>0] #,##0.00; 0"
+    #value_format: "[{% parameter._parameter_value == 'sale_price' %}]$0.00,,\"M\";€0.00,\"K\";"
+    #sql: ${counts}*1000;;
+    sql:
+      {% if parameter._parameter_value == 'sale_price' %}
+        ${count}*10000.32
+      {% elsif parameter._parameter_value == 'cost' %}
+        ${count}
+      {% endif %}
+    ;;
+    html:
+      {% if parameter._parameter_value == 'sale_price' %}
+        ${{rendered_value}}
+      {% elsif parameter._parameter_value == 'cost' %}
+        {{rendered_value}}
+      {% endif %}
+    ;;
   }
   measure: summillon {
     type: number
