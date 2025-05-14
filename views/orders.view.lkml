@@ -98,17 +98,17 @@ view: orders {
     drill_fields: [detail*]
   }
 
+  measure: summillon {
+    type: number
+    sql: ${count}*1000000.12132324545 ;;
+    value_format: "0.000,,\" M\""
+  }
+
   measure: money {
     type: number
-    label:"{% if parameter._parameter_value == 'sale_price' %} Sale Price
-    {% elsif  parameter._parameter_valu == 'cost' %} Cost
-    {% endif %}"
-    value_format: "[>0] #,##0.00; 0"
-    #value_format: "[{% parameter._parameter_value == 'sale_price' %}]$0.00,,\"M\";€0.00,\"K\";"
-    #sql: ${counts}*1000;;
     sql:
       {% if parameter._parameter_value == 'sale_price' %}
-        ${count}*10000.32
+        ${summillon}
       {% elsif parameter._parameter_value == 'cost' %}
         ${count}
       {% endif %}
@@ -120,11 +120,6 @@ view: orders {
         {{rendered_value}}
       {% endif %}
     ;;
-  }
-  measure: summillon {
-    type: number
-    sql: ${count}*1000000.12132324545 ;;
-    value_format: "0.000,,\" M\""
   }
 
   dimension: drill {
