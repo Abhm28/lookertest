@@ -112,6 +112,16 @@ view: users {
               age > 50) then "Yes"
     else "No" end;;
   }
+
+  dimension: countrys {
+    type: string
+    sql: "US" ;;
+  }
+  dimension: flag {
+    type: string
+    sql: lower(${countrys}) ;;
+    html:<p style="text-transform: uppercase"><img src="https://flagcdn.com/w40/{{value}}.png"  > {{value}} </p> ;;
+  }
   measure: counttest {
     type: count_distinct
     sql: ${id} ;;

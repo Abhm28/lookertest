@@ -4,7 +4,7 @@ view: orders {
   # to be used for all fields in this view.
   sql_table_name: demo_db.orders ;;
   drill_fields: [id]
-  parameter: parameter {
+  parameter: parametertest {
     type: unquoted
     allowed_value: {
       label: "Total Sale Price"
@@ -100,23 +100,25 @@ view: orders {
 
   measure: summillon {
     type: number
-    sql: ${count}*1000000.12132324545 ;;
+    sql: ${count}*10.12132324545 ;;
     value_format: "0.000,,\" M\""
   }
 
-  measure: money {
+  measure: measuretest {
     type: number
+    label: "Measure test"
+    value_format: "#,##0.00"
     sql:
-      {% if parameter._parameter_value == 'sale_price' %}
-        ${summillon}
-      {% elsif parameter._parameter_value == 'cost' %}
-        ${count}
+      {% if parametertest._parameter_value == 'sale_price' %}
+        ${count}*100
+      {% elsif parametertest._parameter_value == 'cost' %}
+        ${count}*10
       {% endif %}
     ;;
     html:
-      {% if parameter._parameter_value == 'sale_price' %}
-        ${{rendered_value}}
-      {% elsif parameter._parameter_value == 'cost' %}
+      {% if parametertest._parameter_value == 'sale_price' %}
+        $ {{rendered_value}}
+      {% elsif parametertest._parameter_value == 'cost' %}
         {{rendered_value}}
       {% endif %}
     ;;
