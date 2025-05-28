@@ -59,11 +59,6 @@ view: orders {
     sql: ${TABLE}.status ;;
   }
 
-  dimension: statustest {
-    type: string
-    sql: ${TABLE}.status ;;
-  }
-
   dimension: user_id {
     type: number
     # hidden: yes
@@ -92,7 +87,7 @@ view: orders {
 
   measure: count {
     type: count
-    #filters: [users.state : "Wyoming,Wisconsin,Utah, Texas", users.gender: "f", users.age: ">18"]
+    filters: [users.state : "Wyoming,Wisconsin,Utah, Texas", users.gender: "f", users.age: ">18"]
     #filters: [status_filter: "yes"]
   }
 
