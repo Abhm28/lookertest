@@ -76,14 +76,6 @@ view: orders {
     sql: CONCAT(${status}," - ",${user_id} ) ;;
   }
 
-  #measure: order_count_last_year {
-  #  type: period_over_period
-  #  description: "Order count from the previous year"
-  #  based_on: orders.count
-  #  based_on_time: orders.created_year
-  #  period: year
-  #  kind: previous
-  #}
 
   measure: count {
     type: count
