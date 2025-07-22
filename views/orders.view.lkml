@@ -76,6 +76,12 @@ view: orders {
     sql: CONCAT(${status}," - ",${user_id} ) ;;
   }
 
+  dimension: icon {
+    type: string
+    sql: "https://cdn-icons-png.flaticon.com/512/2550/2550277.png" ;;
+    html: <img src={{value}} height="50" width="50"> ;;
+  }
+
 
   measure: count {
     type: count
