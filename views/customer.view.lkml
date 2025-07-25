@@ -14,6 +14,7 @@ view: customer {
     primary_key: yes
     type: string
     sql: ${TABLE}.neighborhood ;;
+
   }
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
