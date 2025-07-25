@@ -8,6 +8,10 @@ view: dummy {
   # This primary key is the unique key for this table in the underlying database.
   # You need to define a primary key in a view in order to join to other views.
 
+
+
+  # Test Pull Request
+
   dimension: a {
     primary_key: yes
     type: string
