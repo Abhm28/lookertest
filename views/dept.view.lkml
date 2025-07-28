@@ -21,6 +21,9 @@ view: dept {
 
   #test pull request2
 
+
+  #test pull request3
+
   dimension: dept_name {
     type: string
     sql: ${TABLE}.DeptName ;;
