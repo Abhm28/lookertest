@@ -16,6 +16,8 @@ view: dept {
     sql: ${TABLE}.DeptID ;;
   }
 
+  #adding my comment ISidro
+
   dimension: dept_name {
     type: string
     sql: ${TABLE}.DeptName ;;
