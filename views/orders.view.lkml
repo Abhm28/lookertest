@@ -36,6 +36,13 @@ view: orders {
     sql: ${TABLE}.created_at ;;
     convert_tz: no
   }
+
+  dimension: dateformat {
+    type: date
+    sql: ${TABLE}.created_at ;;
+    convert_tz: no
+    html: {{ rendered_value | append: "-01" | date: "%^b-%Y"}} ;;
+  }
   dimension: minutes {
     type: number
     sql: 12*10 ;;
