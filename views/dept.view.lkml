@@ -16,7 +16,7 @@ view: dept {
     sql: ${TABLE}.DeptID ;;
   }
 
-# test cambio x dasda
+# test cambios random
 
   #test pull request
 
