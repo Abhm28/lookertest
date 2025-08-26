@@ -32,3 +32,4 @@ view: countries {
     drill_fields: [binary_value]
   }
 }
+#cambio random
