@@ -21,6 +21,7 @@ view: countries {
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;
+    synonyms: ["pais"]
   }
 
   dimension: state {
