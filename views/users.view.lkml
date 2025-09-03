@@ -23,7 +23,7 @@ view: users {
   }
   dimension: fecha {
     type: string
-    sql: "2026-06-06" ;;
+    sql: "2026-06-07" ;;
   }
   dimension: city {
     type: string
