@@ -73,6 +73,7 @@ view: orders {
     type: number
     # hidden: yes
     sql: ${TABLE}.user_id ;;
+    label: ""
   }
   dimension: link{
     sql: "text" ;;
@@ -98,6 +99,7 @@ view: orders {
     type: count
     filters: [users.state : "Wyoming,Wisconsin,Utah, Texas", users.gender: "f", users.age: ">18"]
     #filters: [status_filter: "yes"]
+    label: "YTD % of overall Budget Achieved"
   }
 
   measure: counttest {

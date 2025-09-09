@@ -21,7 +21,10 @@ view: users {
     type: number
     sql: ${TABLE}.age ;;
   }
-
+  dimension: fecha {
+    type: string
+    sql: "2028-01-01" ;;
+  }
   dimension: city {
     type: string
     sql: ${TABLE}.city ;;
