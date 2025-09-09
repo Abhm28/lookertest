@@ -42,10 +42,12 @@ view: orders {
     sql: ${TABLE}.created_at ;;
     convert_tz: no
     html: {{ rendered_value | append: "-01" | date: "%^b-%Y"}} ;;
+    label: "Budget Total Income"
   }
   dimension: minutes {
     type: number
     sql: 12*10 ;;
+    label: "Actual Total Income"
   }
   dimension_group: addtime {
     type: time
@@ -64,12 +66,14 @@ view: orders {
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
+    label: "Budget Group"
   }
 
   dimension: user_id {
     type: number
     # hidden: yes
     sql: ${TABLE}.user_id ;;
+    label: ""
   }
   dimension: link{
     sql: "text" ;;
@@ -81,6 +85,7 @@ view: orders {
   dimension: concat {
     type: string
     sql: CONCAT(${status}," - ",${user_id} ) ;;
+    label: "% of Budget Achiever for Selected Period"
   }
 
   dimension: icon {
@@ -94,6 +99,7 @@ view: orders {
     type: count
     filters: [users.state : "Wyoming,Wisconsin,Utah, Texas", users.gender: "f", users.age: ">18"]
     #filters: [status_filter: "yes"]
+    label: "YTD % of overall Budget Achieved"
   }
 
   measure: counttest {
