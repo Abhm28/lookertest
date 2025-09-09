@@ -42,10 +42,12 @@ view: orders {
     sql: ${TABLE}.created_at ;;
     convert_tz: no
     html: {{ rendered_value | append: "-01" | date: "%^b-%Y"}} ;;
+    label: "Budget Total Income"
   }
   dimension: minutes {
     type: number
     sql: 12*10 ;;
+    label: "Actual Total Income"
   }
   dimension_group: addtime {
     type: time
@@ -64,6 +66,7 @@ view: orders {
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
+    label: "Budget Group"
   }
 
   dimension: user_id {
@@ -81,6 +84,7 @@ view: orders {
   dimension: concat {
     type: string
     sql: CONCAT(${status}," - ",${user_id} ) ;;
+    label: "% of Budget Achiever for Selected Period"
   }
 
   dimension: icon {
