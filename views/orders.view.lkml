@@ -49,15 +49,7 @@ view: orders {
     sql: 12*10 ;;
     label: "Actual Total Income"
   }
-  dimension_group: addtime {
-    type: time
-    timeframes: [raw, time, date, week, month, quarter, year, minute,hour,time_of_day]
-    sql: DATE_ADD(${created_time}, INTERVAL ${minutes} MINUTE) ;;
-  }
-  dimension: hourexact {
-    type: string
-    sql: concat(${addtime_hour},:,${addtime_minute}) ;;
-  }
+
 
   # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
