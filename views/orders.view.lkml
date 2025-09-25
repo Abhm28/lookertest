@@ -42,12 +42,10 @@ view: orders {
     sql: ${TABLE}.created_at ;;
     convert_tz: no
     html: {{ rendered_value | append: "-01" | date: "%^b-%Y"}} ;;
-    label: "Budget Total Income"
   }
   dimension: minutes {
     type: number
     sql: 12*10 ;;
-    label: "Actual Total Income"
   }
 
 
@@ -58,7 +56,14 @@ view: orders {
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
-    label: "Budget Group"
+    drill_fields: [id]
+    link: {
+      label: "Drill as Table"
+      url: "{% assign vis_config = '{
+      \"type\": \"table\"
+      }' %}
+      {{ link }}&vis_config={{ vis_config | encode_uri }}&toggle=dat,pik,vis&limit=5000"
+    }
   }
 
   dimension: user_id {
@@ -77,7 +82,6 @@ view: orders {
   dimension: concat {
     type: string
     sql: CONCAT(${status}," - ",${user_id} ) ;;
-    label: "% of Budget Achiever for Selected Period"
   }
 
   dimension: icon {
@@ -90,15 +94,15 @@ view: orders {
   measure: count {
     type: count
     filters: [users.state : "Wyoming,Wisconsin,Utah, Texas", users.gender: "f", users.age: ">18"]
-    #filters: [status_filter: "yes"]
-    label: "YTD % of overall Budget Achieved"
+    drill_fields: [id, status]
+
   }
 
   measure: counttest {
     type: count_distinct
-    sql: CASE WHEN (${users.state} in ("Wyoming","Wisconsin","  Utah", "Texas"))  THEN ${id}
-    END;;
-    drill_fields: [detail*]
+    sql: ${status} ;;
+    drill_fields: [id]
+
   }
 
   measure: summillon {
@@ -139,7 +143,11 @@ view: orders {
   users.first_name,
   users.id,
   order_items.count,
-  order_items_vijaya.count
+  order_items_vijaya.count,
+  count
   ]
+  }
+  set:  drilldet{
+    fields:[id]
   }
 }
