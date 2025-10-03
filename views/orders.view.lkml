@@ -90,7 +90,6 @@ view: orders {
     html: <img src={{value}} height="50" width="50"> ;;
   }
 
-
   measure: count {
     type: count
     filters: [users.state : "Wyoming,Wisconsin,Utah, Texas", users.gender: "f", users.age: ">18"]
