@@ -23,6 +23,11 @@ view: orders {
     type: number
     sql: ${TABLE}.id ;;
   }
+
+  dimension: user {
+    type: string
+    sql: _org ;;
+  }
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
@@ -106,7 +111,7 @@ view: orders {
 
   measure: summillon {
     type: number
-    sql: ${count}*10.12132324545 ;;
+    sql: ${id}*125.11 ;;
     value_format: "0.000,,\" M\""
   }
 
