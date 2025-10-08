@@ -1,6 +1,5 @@
----
-- dashboard: test_pdf_downloads_cm_test
-  title: Test PDF Downloads_cm testeo
+- dashboard: testdasgbyabraham
+  title: Test Abraham lookml Dash
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
