@@ -53,7 +53,6 @@ explore: events {
     relationship: many_to_one
   }
 }
-
 explore: flights {}
 
 explore: foo {}
