@@ -1,6 +1,6 @@
 ---
 - dashboard: test_pdf_downloads_cm_test
-  title: Test PDF Downloads_cm
+  title: Test PDF Downloads_cm testeo
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
