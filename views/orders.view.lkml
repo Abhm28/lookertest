@@ -59,6 +59,7 @@ view: orders {
     # This dimension will be called "Status" in Explore.
 
   dimension: status {
+    label: "[Usage Metrics] Users in System"
     type: string
     sql: ${TABLE}.status ;;
     drill_fields: [id]
