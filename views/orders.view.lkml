@@ -1,5 +1,6 @@
 # The name of this view in Looker is "Orders"
 view: orders {
+  label: "[Usage Metrics]"
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
   sql_table_name: demo_db.orders ;;
@@ -59,7 +60,7 @@ view: orders {
     # This dimension will be called "Status" in Explore.
 
   dimension: status {
-    label: "[Usage Metrics] Users in System"
+    label: "Users in System"
     type: string
     sql: ${TABLE}.status ;;
     drill_fields: [id]
@@ -114,6 +115,7 @@ view: orders {
     type: number
     sql: ${id}*125.11 ;;
     value_format: "0.000,,\" M\""
+    label: "Contracted Policy Owners/Admins"
   }
 
   measure: measuretest {
