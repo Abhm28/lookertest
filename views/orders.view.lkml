@@ -58,7 +58,10 @@ view: orders {
   # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
     # This dimension will be called "Status" in Explore.
-
+  dimension: nombre {
+    label: "nombre"
+    sql: "mauroalejandro@google.com" ;;
+  }
   dimension: status {
     label: "Users in System"
     type: string
@@ -66,7 +69,7 @@ view: orders {
     drill_fields: [id]
     link: {
       label: "View Account on Salesforce"
-      url: "https://gcpl2516.cloud.looker.com/looks/15"
+      url: "https://gcpl2516.cloud.looker.com/dashboards/37?Email={{nombre}}"
       icon_url: "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce.svg"
 
     }
