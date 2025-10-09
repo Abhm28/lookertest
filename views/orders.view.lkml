@@ -65,11 +65,24 @@ view: orders {
     sql: ${TABLE}.status ;;
     drill_fields: [id]
     link: {
-      label: "Drill as Table"
-      url: "{% assign vis_config = '{
-      \"type\": \"table\"
-      }' %}
-      {{ link }}&vis_config={{ vis_config | encode_uri }}&toggle=dat,pik,vis&limit=5000"
+      label: "View Account on Salesforce"
+      url: "https://gcpl2516.cloud.looker.com/looks/15"
+      icon_url: "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce.svg"
+
+    }
+    link: {
+      label: "View on Instance Specific Dashbaord"
+      url: "https://gcpl2516.cloud.looker.com/looks/15"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
+
+    link: {
+      label: "View Account in Vitally"
+      url: "https://gcpl2516.cloud.looker.com/looks/15"
+    }
+    link: {
+      label: "Instance Metrics"
+      url: "https://gcpl2516.cloud.looker.com/looks/15"
     }
   }
 
