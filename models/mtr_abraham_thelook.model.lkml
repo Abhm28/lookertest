@@ -1,6 +1,6 @@
 # Define the database connection to be used for this model.
 connection: "thelook"
-
+include: "/pdts/**/*.view"
 # include all the views
 include: "/views/**/*.view.lkml"
 include: "/Dashboards/*.dashboard.lookml"
@@ -8,6 +8,13 @@ include: "/Dashboards/*.dashboard.lookml"
 # use the Quick Help panel on the right to see documentation.
 
 datagroup: testMTY_default_datagroup {
+  #sql_trigger: SELECT MAX(id) FROM etl_log;;
+  max_cache_age: "5 minutes"
+  interval_trigger: "5 minutes"
+  description: "Trigger every 5 minutes to persist data for 5 minutes at a time"
+}
+
+datagroup: test_datagroup{
   #sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "5 minutes"
   interval_trigger: "5 minutes"
@@ -29,7 +36,7 @@ access_grant: can_view_dev {
 # To create more sophisticated Explores that involve multiple views, you can use the join parameter.
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
-
+explore: pdt_test_vega {}
 explore: countries {}
 
 explore: customer {}
