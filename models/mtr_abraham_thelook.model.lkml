@@ -14,7 +14,7 @@ datagroup: testMTY_default_datagroup {
   description: "Trigger every 5 minutes to persist data for 5 minutes at a time"
 }
 
-datagroup: test_datagroup{
+datagroup: test_datagroup_vega{
   #sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "5 minutes"
   interval_trigger: "5 minutes"
