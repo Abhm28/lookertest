@@ -1,5 +1,6 @@
 # The name of this view in Looker is "Orders"
 view: orders {
+  label: "[Usage Metrics]"
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
   sql_table_name: demo_db.orders ;;
@@ -22,6 +23,11 @@ view: orders {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+  }
+
+  dimension: user {
+    type: string
+    sql: _org ;;
   }
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
@@ -52,17 +58,34 @@ view: orders {
   # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
     # This dimension will be called "Status" in Explore.
-
+  dimension: nombre {
+    label: "nombre"
+    sql: "mauroalejandro@google.com" ;;
+  }
   dimension: status {
+    label: "Users in System"
     type: string
     sql: ${TABLE}.status ;;
     drill_fields: [id]
     link: {
-      label: "Drill as Table"
-      url: "{% assign vis_config = '{
-      \"type\": \"table\"
-      }' %}
-      {{ link }}&vis_config={{ vis_config | encode_uri }}&toggle=dat,pik,vis&limit=5000"
+      label: "View Account on Salesforce"
+      url: "https://gcpl2516.cloud.looker.com/dashboards/37?Email={{nombre}}"
+      icon_url: "https://c1.sfdcstatic.com/content/dam/web/en_us/www/images/home/logo-salesforce.svg"
+
+    }
+    link: {
+      label: "View on Instance Specific Dashbaord"
+      url: "https://gcpl2516.cloud.looker.com/looks/15"
+      icon_url: "http://www.looker.com/favicon.ico"
+    }
+
+    link: {
+      label: "View Account in Vitally"
+      url: "https://gcpl2516.cloud.looker.com/looks/15"
+    }
+    link: {
+      label: "Instance Metrics"
+      url: "https://gcpl2516.cloud.looker.com/looks/15"
     }
   }
 
@@ -90,7 +113,6 @@ view: orders {
     html: <img src={{value}} height="50" width="50"> ;;
   }
 
-
   measure: count {
     type: count
     filters: [users.state : "Wyoming,Wisconsin,Utah, Texas", users.gender: "f", users.age: ">18"]
@@ -107,8 +129,9 @@ view: orders {
 
   measure: summillon {
     type: number
-    sql: ${count}*10.12132324545 ;;
+    sql: ${id}*125.11 ;;
     value_format: "0.000,,\" M\""
+    label: "Contracted Policy Owners/Admins"
   }
 
   measure: measuretest {
