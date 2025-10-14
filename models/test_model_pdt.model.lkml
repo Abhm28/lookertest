@@ -1,4 +1,4 @@
-connection: "erodriguezm-snowflake"
+connection: "bigquery_test"
 include: "/pdts/**/*.view"
 include: "/views/*.view.lkml"                # include all views in the views/ folder in this project
 # include: "/**/*.view.lkml"                 # include all views in this project
