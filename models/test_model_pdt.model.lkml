@@ -4,7 +4,7 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 # include: "/**/*.view.lkml"                 # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 
-datagroup: test_datagroup_vega {
+datagroup: test_datagroup_vega_fail {
   interval_trigger: "5 minutes"
   max_cache_age: "5 minutes"
 }
