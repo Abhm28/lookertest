@@ -25,7 +25,6 @@
   - name: Zip
     title: Zip
     type: field_filter
-    default_value: "{{ _user_attributes['org'] }}"
     allow_multiple_values: true
     required: false
     ui_config:

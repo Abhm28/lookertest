@@ -1,9 +1,12 @@
 # Define the database connection to be used for this model.
+
 connection: "thelook"
 include: "/pdts/**/*.view"
 # include all the views
+
 include: "/views/**/*.view.lkml"
 include: "/Dashboards/*.dashboard.lookml"
+
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
 
@@ -36,7 +39,9 @@ access_grant: can_view_dev {
 # To create more sophisticated Explores that involve multiple views, you can use the join parameter.
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
+
 explore: pdt_test_vega {}
+
 explore: countries {}
 
 explore: customer {}
