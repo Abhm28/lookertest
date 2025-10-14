@@ -1,20 +1,25 @@
 view: pdt_test_vega {
   derived_table: {
-    explore_source: orders {
-      column: status {}
-      column: count {}
-      column: zip { field: users.zip }
+    datagroup_trigger: test_datagroup_vega
+    explore_source: users {
+      column: id {}
+      column: first_name {}
+      column: email {}
+      column: city {}
     }
+    indexes: ["id"]
   }
-  dimension: status {
-    description: ""
-  }
-  dimension: count {
+  dimension: id {
     description: ""
     type: number
   }
-  dimension: zip {
+  dimension: first_name {
     description: ""
-    type: zipcode
+  }
+  dimension: email {
+    description: ""
+  }
+  dimension: city {
+    description: ""
   }
 }
