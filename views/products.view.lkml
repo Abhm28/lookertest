@@ -27,6 +27,20 @@ view: products {
     sql: ${TABLE}.category ;;
   }
 
+# Assuming this is in the view file (e.g., product_view.view)
+
+# ... (other dimensions and fields)
+
+  dimension: is_bottom_wear {
+    type: yesno
+    sql:${category} IN ('Jeans', 'Leggings', 'Pants', 'Pants & Capris', 'Shorts');;
+      }
+
+  dimension: is_specialty_category {
+    type: yesno
+    sql: ${category} IN ('Maternity', 'Jeans', 'Plus', 'Intimates', 'Socks & Hosiery', 'Leggings');;
+      }
+
   dimension: department {
     type: string
     sql: ${TABLE}.department ;;
