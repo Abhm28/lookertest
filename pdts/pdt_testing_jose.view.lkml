@@ -1,6 +1,6 @@
 view: pdt_testing_jose {
   derived_table: {
-    datagroup_trigger: test_datagroup_vega
+    datagroup_trigger: test_datagroup_jose
     explore_source: users {
       column: id {}
       column: first_name {}
