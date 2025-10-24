@@ -9,5 +9,5 @@ application: RadialApp {
 visualization: {
   id: "Radial Local"
   label: "Radial Local V1"
-  url: "https://gcpl2518.cloud.looker.com/projects/mtr_abraham_thelook/files/radialgauge_v2.js"
+  file: "visualizations/radialgauge_v2.js"
 }
