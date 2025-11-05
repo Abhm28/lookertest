@@ -16,6 +16,7 @@ view: orders {
       value: "cost"
     }
   }
+
   # This primary key is the unique key for this table in the underlying database.
   # You need to define a primary key in a view in order to join to other views.
 
@@ -94,6 +95,7 @@ view: orders {
     # hidden: yes
     sql: ${TABLE}.user_id ;;
     label: ""
+    required_access_grants: [test_access]
   }
   dimension: link{
     sql: "text" ;;
