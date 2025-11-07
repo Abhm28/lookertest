@@ -57,6 +57,8 @@ access_grant: test_access {
 
 explore: pdt_test_vega {}
 
+explore: incrementaltest {}
+
 explore: countries {}
 
 explore: customer {}
