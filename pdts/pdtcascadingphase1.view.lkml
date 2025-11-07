@@ -9,6 +9,7 @@ view: pdtcascadingphase1 {
       column: zip { field: users.zip }
       column: count { field: users.count }
     }
+    indexes: ["id"]
   }
   dimension: id {
     description: ""

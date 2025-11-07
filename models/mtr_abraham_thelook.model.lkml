@@ -59,6 +59,8 @@ explore: pdt_test_vega {}
 
 explore: incrementaltest {}
 
+explore: pdtcascadingphase1 {}
+
 explore: countries {}
 
 explore: customer {}
