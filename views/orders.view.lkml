@@ -44,6 +44,13 @@ view: orders {
     convert_tz: no
   }
 
+  dimension: createdatetest_cst {
+    type: date_time
+    #sql: ${TABLE}.created_at;;
+    sql: CONVERT_TZ(${TABLE}.created_at,'UTC', 'America/Chicago') ;;
+    html: {{ value | date: '%m/%d/%Y %H:%M:%S' }} ;;
+  }
+
   dimension: dateformat {
     type: date
     sql: ${TABLE}.created_at ;;
