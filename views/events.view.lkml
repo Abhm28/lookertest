@@ -28,6 +28,9 @@ view: events {
     # A dimension is a groupable field that can be used to filter query results.
     # This dimension will be called "Type ID" in Explore.
 
+  #dynamicmeasure test
+
+
   dimension: type_id {
     type: number
     sql: ${TABLE}.type_id ;;
@@ -47,4 +50,5 @@ view: events {
     type: count
     drill_fields: [id, users.last_name, users.first_name, users.id]
   }
+
 }
