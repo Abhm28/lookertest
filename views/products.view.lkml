@@ -44,6 +44,26 @@ view: products {
     type: string
     sql: ${TABLE}.category ;;
   }
+  filter: select_category {
+    description: "to select category"
+    type: string
+    suggest_dimension: category
+  }
+  dimension: start_filter_prod {
+    type: yesno
+    description: "diemnsion for filtering measure"
+    hidden: no
+    sql: {% condition select_category %} ${category} {% endcondition %} ;;
+  }
+  measure: period_one {
+    type: sum
+    label: "{{_filters['select_category']}}"
+    value_format_name: usd
+    sql:
+      ${products.retail_price}
+      ;;
+      filters: [start_filter_prod : "yes"]
+    }
 
 # Assuming this is in the view file (e.g., product_view.view)
 
