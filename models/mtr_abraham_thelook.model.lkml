@@ -41,10 +41,10 @@ access_grant: can_view_dev {
   user_attribute: id
   allowed_values: ["51"]
 }
-access_grant: test_access {
-  user_attribute: roltest
-  allowed_values: [ "Admin" ]
-}
+#access_grant: test_access {
+#  user_attribute: roltest
+#  allowed_values: [ "Admin" ]
+#}
 # Explores allow you to join together different views (database tables) based on the
 # relationships between fields. By joining a view into an Explore, you make those
 # fields available to users for data analysis.

@@ -8,6 +8,7 @@ view: orders {
   parameter: parametertest {
     type: unquoted
     allowed_value: {
+
       label: "Total Sale Price"
       value: "sale_price"
     }
@@ -122,6 +123,12 @@ view: orders {
     filters: [users.state : "Wyoming,Wisconsin,Utah, Texas", users.gender: "f", users.age: ">18"]
     drill_fields: [id, status]
 
+  }
+
+  dimension: emoji {
+    type: string
+    sql: "testing emoji: &#128511;";;
+    html: {{ value }};;
   }
 
   measure: counttest {
