@@ -125,12 +125,6 @@ view: orders {
 
   }
 
-  dimension: emoji {
-    type: string
-    sql: "testing emoji: &#128511;";;
-    html: {{ value }};;
-  }
-
   measure: counttest {
     type: count_distinct
     sql: ${status} ;;
@@ -163,6 +157,12 @@ view: orders {
         {{rendered_value}}
       {% endif %}
     ;;
+  }
+
+  dimension: emoji {
+    type: string
+    sql: "testing emoji: &#128511;";;
+    html: {{ value }};;
   }
 
   dimension: drill {
