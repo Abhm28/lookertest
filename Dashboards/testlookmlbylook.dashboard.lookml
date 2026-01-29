@@ -1,9 +1,10 @@
-- dashboard: testlookmlbylook
-  title: testlookmlbylook test
+---
+- dashboard: testlookmlbylook_test
+  title: Testlookmlbylook test
   preferred_viewer: dashboards-next
   description: ''
   preferred_slug: 6DXtWKahVAls7z64YoSzOe
-  theme_name: ''
+  theme_name: tests2
   layout: newspaper
   elements:
   - title: Untitled Visualization
