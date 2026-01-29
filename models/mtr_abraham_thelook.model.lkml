@@ -37,14 +37,7 @@ datagroup: test_datagroup_jose{
 
 
 persist_with: testMTY_default_datagroup
-access_grant: can_view_dev {
-  user_attribute: id
-  allowed_values: ["51"]
-}
-access_grant: test_access {
-  user_attribute: roltest
-  allowed_values: [ "Admin" ]
-}
+
 # Explores allow you to join together different views (database tables) based on the
 # relationships between fields. By joining a view into an Explore, you make those
 # fields available to users for data analysis.
@@ -56,11 +49,6 @@ access_grant: test_access {
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
-explore: pdt_test_vega {}
-
-explore: incrementaltest {}
-
-explore: pdtcascadingphase1 {}
 
 explore: countries {}
 

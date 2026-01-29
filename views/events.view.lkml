@@ -13,7 +13,6 @@ view: events {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
-    required_access_grants: [can_view_dev]
   }
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
@@ -22,7 +21,6 @@ view: events {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.created_at ;;
-    required_access_grants: [can_view_dev]
   }
     # Here's what a typical dimension looks like in LookML.
     # A dimension is a groupable field that can be used to filter query results.
