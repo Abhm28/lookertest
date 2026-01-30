@@ -1,9 +1,10 @@
 ---
 - dashboard: testlookmlbylook
-  title: testlookmlbylook
+  title: Testlookmlbylook test
   preferred_viewer: dashboards-next
   description: ''
   preferred_slug: 6DXtWKahVAls7z64YoSzOe
+  theme_name: tests2
   layout: newspaper
   elements:
   - title: Untitled Visualization
@@ -32,21 +33,22 @@
     conditional_formatting_include_nulls: false
     defaults_version: 1
     listen:
-      Created Date: orders.created_date
+      Created: orders.created_date
     row: 0
     col: 0
     width: 8
     height: 6
   filters:
-  - name: Created Date
-    title: Created Date
+  - name: Created
+    title: Created
     type: field_filter
-    default_value: 2020/01/01 to 2021/01/01
+    default_value:
     allow_multiple_values: true
     required: false
     ui_config:
-      type: advanced
-      display: popover
+      type: relative_timeframes
+      display: inline
+      options: []
     model: mtr_abraham_thelook
     explore: orders
     listens_to_filters: []
