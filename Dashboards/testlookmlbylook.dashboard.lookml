@@ -1,6 +1,6 @@
 ---
 - dashboard: testlookmlbylook
-  title: Testlookmlbylook test
+  title: testlookmlbylook
   preferred_viewer: dashboards-next
   description: ''
   preferred_slug: 6DXtWKahVAls7z64YoSzOe
