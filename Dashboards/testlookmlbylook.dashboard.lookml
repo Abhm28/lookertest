@@ -1,5 +1,5 @@
 ---
-- dashboard: testlookmlbylook_test
+- dashboard: testlookmlbylook
   title: Testlookmlbylook test
   preferred_viewer: dashboards-next
   description: ''
