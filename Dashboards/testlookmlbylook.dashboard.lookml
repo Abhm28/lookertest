@@ -46,9 +46,8 @@
     allow_multiple_values: true
     required: false
     ui_config:
-      type: relative_timeframes
-      display: inline
-      options: []
+      type: advanced
+      display: popover
     model: mtr_abraham_thelook
     explore: orders
     listens_to_filters: []
