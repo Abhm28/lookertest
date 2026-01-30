@@ -59,7 +59,7 @@
     height: 6
   - type: button
     name: button_100
-    rich_content_json: '{"text":"New Button","description":"","newTab":true,"alignment":"center","size":"medium","style":"FILLED","color":"#1A73E8","href":"/embed/dashboards/mtr_abraham_thelook::testlookmlbylook?Created=2020%2F01%2F01+to+2021%2F01%2F01&theme=breeze&hide_filter=Created"}'
+    rich_content_json: '{"text":"New Button","description":"","newTab":false,"alignment":"center","size":"medium","style":"FILLED","color":"#1A73E8","href":"/embed/dashboards/mtr_abraham_thelook::testlookmlbylook?Created=2020%2F01%2F01+to+2021%2F01%2F01&theme=breeze&hide_filter=Created"}'
     row: 6
     col: 0
     width: 24
