@@ -170,6 +170,15 @@ view: orders {
     sql: ${TABLE}.status ;;
   }
 
+  dimension: button {
+    sql: Click to view the dictionary ;;
+    drill_fields: [drill2]
+
+  }
+  dimension: drill2 {
+    sql: "https://gcpl260.cloud.looker.com/embed/dashboards/mtr_abraham_thelook::test_67397699_lookmldashbaord" ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
