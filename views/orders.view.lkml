@@ -24,6 +24,7 @@ view: orders {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+    drill_fields: [status]
   }
 
   dimension: user {
@@ -121,7 +122,14 @@ view: orders {
     type: count
     filters: [users.state : "Wyoming,Wisconsin,Utah, Texas", users.gender: "f", users.age: ">18"]
     drill_fields: [id, status]
-
+    html: {% if value == 0 %}
+    <p style="color: black; background-color: red;">{{ rendered_value }}</p>
+    {% elsif value >0 %}
+    <p style="color: black; background-color: geen;">{{ rendered_value }}</p>
+    {% else %}
+    <p style="color: white; background-color: yellow;">{{ rendered_value }}</p>
+    {% endif %} ;;
+    description: "The current status of an existing order."
   }
 
   measure: counttest {
@@ -171,7 +179,8 @@ view: orders {
   users.id,
   order_items.count,
   order_items_vijaya.count,
-  count
+  count,
+  status
   ]
   }
   set:  drilldet{
