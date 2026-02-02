@@ -174,8 +174,11 @@ view: orders {
   dimension: button {
     type: string
     sql: "Click to view the dictionary" ;;
-    drill_fields: [users.state]
-
+    link: {
+        label: "Ver Dashboard de Detalle"
+        url: "/dashboards/mtr_abraham_thelook::testlookmlbylook?Created="
+        icon_url: ""
+    }
   }
   dimension: drill2 {
     sql: ${TABLE}.state ;;
