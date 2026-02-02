@@ -176,7 +176,7 @@ view: orders {
     sql: "Click to view the dictionary" ;;
     link: {
         label: "Ver Dashboard de Detalle"
-        url: "/dashboards/mtr_abraham_thelook::testlookmlbylook?Created="
+        url: "/embed/dashboards/mtr_abraham_thelook::testlookmlbylook?Created="
         icon_url: ""
     }
   }
