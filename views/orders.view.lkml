@@ -174,11 +174,11 @@ view: orders {
   dimension: button {
     type: string
     sql: "Click to view the dictionary" ;;
-    drill_fields: [drill2]
+    drill_fields: [users.state]
 
   }
   dimension: drill2 {
-    sql: "https://gcpl260.cloud.looker.com/embed/dashboards/mtr_abraham_thelook::test_67397699_lookmldashbaord" ;;
+    sql: ${TABLE}.state ;;
   }
 
   # ----- Sets of fields for drilling ------
@@ -191,7 +191,8 @@ view: orders {
   order_items.count,
   order_items_vijaya.count,
   count,
-  status
+  status,
+  users.state
   ]
   }
   set:  drilldet{
