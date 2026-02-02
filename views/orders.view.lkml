@@ -167,11 +167,13 @@ view: orders {
   }
 
   dimension: drill {
+    type: string
     sql: ${TABLE}.status ;;
   }
 
   dimension: button {
-    sql: Click to view the dictionary ;;
+    type: string
+    sql: "Click to view the dictionary" ;;
     drill_fields: [drill2]
 
   }
