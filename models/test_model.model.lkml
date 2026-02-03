@@ -1,4 +1,4 @@
-connection: "thelook"
+connection: "yutaro"
 
 include: "/views/*.view.lkml"
 include: "/pdts/**/*.view"
