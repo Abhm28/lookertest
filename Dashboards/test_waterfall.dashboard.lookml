@@ -1,19 +1,20 @@
 ---
-- dashboard: testlookmlbylook
-  title: Testlookmlbylook test
-  preferred_viewer: dashboards-next
+- dashboard: Test_waterfall
+  title: test
   description: ''
-  preferred_slug: 6DXtWKahVAls7z64YoSzOe
-  theme_name: tests2
+  preferred_slug: oA7oTV8Kj4mAPLsSnJDu4G
+  theme_name: ''
   layout: newspaper
+  tabs:
+  - name: ''
+    label: ''
   elements:
-  - title: Untitled Visualization
-    name: Untitled Visualization
-    model: mtr_abraham_thelook
-    explore: orders
+  - title: schedule
+    name: schedule
+    model: system__activity
+    explore: scheduled_plan
     type: looker_grid
-    fields: [orders.count, orders.status]
-    sorts: [orders.count desc 0]
+    fields: [scheduled_plan.id, scheduled_plan.name, scheduled_job.cron_schedule]
     limit: 500
     column_limit: 50
     show_view_names: false
@@ -32,27 +33,12 @@
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     defaults_version: 1
-    listen:
-      Created: orders.created_date
+    listen: {}
     row: 0
     col: 0
     width: 8
     height: 6
-  filters:
-  - name: Created
-    title: Created
-    type: field_filter
-    default_value:
-    allow_multiple_values: true
-    required: false
-    ui_config:
-      type: relative_timeframes
-      display: inline
-      options: []
-    model: mtr_abraham_thelook
-    explore: orders
-    listens_to_filters: []
-    field: orders.created_date
+    tab_name: ''
   - title: waterfall
     name: waterfall
     model: mtr_abraham_thelook
@@ -81,18 +67,28 @@
         reverse: false
     advanced_vis_config: |-
       {
-        chart: {
-          type: "waterfall",
-        },
+        chart: {},
         series: [{
-          name: 'Sumarize Negative'
-        }],
-        dataLabels: {
-          enabled: true,
-          align: 'right', // Align labels to the right
-          overflow: 'allow', // Allow labels to overflow outside the plot area
-          crop: false // Prevent cropping of labels
-        }
+          name: 'Waterfall Chart'
+          }],
+          "plotOptions": {
+            "waterfall": {
+              "dataLabels": {
+              "enabled": true,
+              "inside": false
+            }
+          }
+        },
+        "series": [{
+          "showInLegend": false,
+          "pointWidth": 70,
+          "dataLabels": {
+            "enabled": true,
+            "crop": false,
+            "align": 'top',
+            "overflow": 'allow'
+          }
+        }]
       }
     x_axis_gridlines: false
     show_view_names: false
@@ -101,25 +97,25 @@
     y_axis_scale_mode: linear
     x_axis_reversed: false
     y_axis_reversed: false
-    plot_size_by_field: false
+    plot_size_by_field: true
     x_axis_zoom: true
     y_axis_zoom: true
     trellis: ''
     stacking: ''
-    limit_displayed_rows: false
+    limit_displayed_rows: true
     legend_position: center
     point_style: none
     label_density: 25
     y_axis_combined: true
     ordering: none
     show_null_labels: false
-    show_totals_labels: false
+    show_totals_labels: true
     show_silhouette: false
     totals_color: "#808080"
     defaults_version: 1
     listen: {}
     row: 0
     col: 8
-    width: 8
-    height: 6
+    width: 12
+    height: 8
     tab_name: ''
