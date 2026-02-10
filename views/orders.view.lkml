@@ -132,10 +132,9 @@ view: orders {
     description: "The current status of an existing order."
   }
 
-  measure: counttest {
-    type: count_distinct
-    sql: ${status} ;;
-    drill_fields: [id]
+  measure: sumarize_negative {
+    type: number
+    sql: ${count}-1000 ;;
 
   }
 
