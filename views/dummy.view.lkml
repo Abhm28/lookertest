@@ -36,4 +36,8 @@ view: dummy {
     type: count
     drill_fields: [a]
   }
+  measure: testcount {
+    type: number
+    sql: ${count}+2 ;;
+  }
 }
