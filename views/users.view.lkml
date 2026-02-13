@@ -71,6 +71,7 @@ view: users {
   dimension: last_name {
     type: string
     sql: ${TABLE}.last_name ;;
+    suggest_persist_for: "24 hours"
   }
   dimension: state {
     type: string

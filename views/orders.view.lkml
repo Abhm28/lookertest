@@ -72,6 +72,7 @@ view: orders {
     type: string
     sql: ${TABLE}.status ;;
     drill_fields: [id]
+    suggestions: ["CANCELLED","COMPLETED","PENDING"]
     #link: {
     #  label: "View Account on Salesforce"
     #  url: "https://gcpl2516.cloud.looker.com/dashboards/37?Email={{nombre}}"
