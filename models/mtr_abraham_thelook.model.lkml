@@ -94,10 +94,6 @@ explore: orders {
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
-  join: contorderperuser {
-    sql_on: ${orders.user_id} = ${contorderperuser.id} ;;
-    relationship: many_to_one
-  }
 }
 
 explore: order_items {
