@@ -32,9 +32,9 @@ view: orders {
     sql: _org ;;
   }
 
-  dimension: now {
-    type: date_time # or type: string
-    sql: CONVERT_TZ(now(),'UTC', 'America/Chicago') ;;
+  dimension_group: now {
+    type: time # or type: string
+    sql: CONVERT_TZ(now(),'UTC', 'America/New_York') ;;
     convert_tz: no
   }
 
