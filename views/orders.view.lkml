@@ -35,15 +35,9 @@ view: orders {
   dimension_group: now {
     type: time # or type: string
     timeframes: [raw, time, date, week, month, quarter, year, minute,hour]
-    sql: SELECT DATETIME(now(), "America/Los_Angeles") as date;
+    sql: SELECT DATETIME(now(), "America/Los_Angeles") as date;;
     convert_tz: no
   }
-  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
-  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
-  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
-  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
-  # Dates and timestamps can be represented in Looker using a dimension group of type: time.
-  # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
   dimension_group: created {
     type: time
