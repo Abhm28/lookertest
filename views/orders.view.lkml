@@ -31,6 +31,12 @@ view: orders {
     type: string
     sql: _org ;;
   }
+
+  dimension: now {
+    type: date_time # or type: string
+    sql: NOW() ;;
+    convert_tz: yes
+  }
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
