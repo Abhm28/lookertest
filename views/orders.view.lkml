@@ -34,7 +34,7 @@ view: orders {
 
   dimension: now {
     type: date_time # or type: string
-    sql: SELECT DATETIME(now(), "America/Los_Angeles") as date;;
+    sql: SELECT now();;
     convert_tz: no
   }
 
