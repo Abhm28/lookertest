@@ -32,9 +32,8 @@ view: orders {
     sql: _org ;;
   }
 
-  dimension_group: now {
-    type: time # or type: string
-    timeframes: [raw, time, date, week, month, quarter, year, minute,hour]
+  dimension: now {
+    type: date_time # or type: string
     sql: SELECT DATETIME(now(), "America/Los_Angeles") as date;;
     convert_tz: no
   }
