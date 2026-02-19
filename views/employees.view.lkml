@@ -11,6 +11,32 @@ view: employees {
     # A dimension is a groupable field that can be used to filter query results.
     # This dimension will be called "Emp ID" in Explore.
 
+
+  dimension: name {
+    type: string
+    sql: ${TABLE}.Name ;;
+  }
+
+  dimension: customer_facing_cam_advisor_notes {
+    label: "CAM Advisor Notes"
+    type: string
+     sql: ${TABLE}.Name ;;
+  }
+
+  dimension: customer_facing_cam_advisor_notes_formatted {
+    label: "CAM Advisor Notes"
+    type: string
+     sql: ${TABLE}.Name ;;
+    html: <a style="cursor: pointer;" href="#drillmenu" title= "{{value}}" > {{value}} </a> ;;
+    drill_fields: [customer_facing_cam_advisor_notes]
+  }
+
+
+
+
+
+
+
   dimension: emp_id {
     type: number
     sql: ${TABLE}.EmpID ;;
@@ -21,10 +47,7 @@ view: employees {
     sql: ${TABLE}.Manager ;;
   }
 
-  dimension: name {
-    type: string
-    sql: ${TABLE}.Name ;;
-  }
+
   measure: count {
     type: count
     drill_fields: [name]
