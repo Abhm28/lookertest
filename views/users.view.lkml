@@ -76,6 +76,7 @@ view: users {
   dimension: state {
     type: string
     sql: ${TABLE}.state ;;
+    suggestions: ["Alabama", "  Alaska", "Kentucky", "Massachusetts", "Missouri", " North Carolina", "Tennessee", "Washington"]
   }
 
   dimension: zip {
