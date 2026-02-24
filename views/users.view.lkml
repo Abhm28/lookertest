@@ -108,6 +108,19 @@ view: users {
     type: count
     drill_fields: [detail*]
   }
+  measure: countEx1 {
+    type: number
+    description: "Export format works"
+    sql: ${count}/17199 ;;
+    drill_fields: [detail*]
+    value_format_name: percent_0
+  }
+  measure: countEx2 {
+    type: number
+    description: "Export format not works"
+    sql: ${count}/17199 ;;
+    value_format: "0.00%"
+  }
   #dimension: condicion1 {
   #  type: string
   #  hidden: yes
