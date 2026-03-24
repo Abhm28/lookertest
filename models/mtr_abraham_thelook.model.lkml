@@ -2,6 +2,7 @@
 #Comment to save
 connection: "thelook"
 include: "/pdts/**/*.view"
+include: "/5k_schedule_limit.dashboard.lookml"
 # include all the views
 
 include: "/views/**/*.view.lkml"
